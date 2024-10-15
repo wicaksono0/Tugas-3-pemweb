@@ -1,0 +1,134 @@
+/* Reset CSS untuk konsistensi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #070707;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse; /* Nav di kanan, Main di kiri */
+    align-items: flex-start;
+}
+
+nav {
+    width: 30%; /* Ukuran fixed untuk navigasi */
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #000000;
+    padding: 20px;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    background-color: #333;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+main {
+    flex-grow: 1; /* Main memenuhi sisa ruang */
+    margin-right: 30px; /* Jarak antara main dan nav */
+}
+
+.block {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    min-height: 110px;
+}
+
+/* Footer di bawah navigasi */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Desain Responsif */
+
+/* Layout untuk layar besar (Desktop) */
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row-reverse; /* Nav tetap di kanan */
+    }
+
+    main {
+        margin-right: 20px;
+    }
+}
+
+/* Layout untuk tablet (Tablet) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        flex-direction: row-reverse; /* Tetap, Nav di kanan */
+    }
+
+    nav {
+        width: 30%;
+    }
+
+    main {
+        margin-right: 10px;
+    }
+
+    header, footer {
+        padding: 15px 0;
+    }
+}
+
+/* Layout untuk ponsel (Mobile) */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column-reverse; /* Nav di bawah main */
+    }
+
+    nav {
+        width: 100%; /* Nav mengambil seluruh lebar */
+        margin-top: 20px;
+    }
+
+    main {
+        margin-right: 0;
+    }
+
+    header, footer {
+        font-size: 14px; /* Ukuran font lebih kecil untuk ponsel */
+        padding: 10px 0;
+    }
+}
